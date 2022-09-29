@@ -1,0 +1,7 @@
+accelerator:
+  displayName: Surfers Python-Flask Accelerator
+  description: Contains the Surfers system python-flask scafolding for a new module
+  iconUrl: https://www.freeiconspng.com/uploads/sports-surfing-icon-3.png
+  tags:
+  - surferslookout
+  - python
