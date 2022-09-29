@@ -6,7 +6,7 @@ from . import bp
 @bp.route('/', methods=["GET"])
 def home():
     app.logger.info("Accessing home page")
-    _color = 'blue'
+    _color = 'green'
     return render_template('home.html', color=_color)
 
 

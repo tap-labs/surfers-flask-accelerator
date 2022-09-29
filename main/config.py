@@ -4,7 +4,7 @@ from pyservicebinding import binding
 basedir = os.getcwd()
 
 class Config:
-    VERSION = '1'
+    VERSION = '2'
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret'
     SESSION_COOKIE_HTTPONLY = False
     ENV = 'unset'
