@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Surfers Lookout</title>
+
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+      <!-- Main stylesheet -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}?ver={{config.VERSION}}">
+    </head>
+
+    <body>
+
+      <section>
+        
+        {% block content %}{% endblock %}
+
+      </section>    
+    </body>
+</html>

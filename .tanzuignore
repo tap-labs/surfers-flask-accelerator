@@ -1,0 +1,12 @@
+.git/
+.github/
+.gitmodules
+**/.gitattributes
+**/.gitignore
+README.md
+tap/
+techdocs_publish.sh
+Tiltfile
+.vscode/
+mkdocs.yml
+docs/
