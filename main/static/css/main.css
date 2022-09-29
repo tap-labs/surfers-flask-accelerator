@@ -24,13 +24,17 @@ body {
     border-radius: 50%;
 }
 
+.container-center {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 10px;
+}
+
 label {
-    position: absolute;
-    margin-top: 10%;
-    margin-left: 6%;
     font-family: cursive, sans-serif;
     font-size: 3rem;
     font-weight: bolder;
     font-style: italic;
-    color: white;
+    text-transform:capitalize;
+    color: rgb(14, 115, 9);
 }

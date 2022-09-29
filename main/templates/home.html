@@ -4,8 +4,9 @@
 {% block content %}
 
     <div class="container" style="background-color:{{ color_code(color) }};">
-        <label>Hello {{ color }} World</label>
     </div>
-
+    <div class="container-center">
+        <label style="color:{{ color_code(color) }};">Hello {{ color }} World</label>
+    </div>
 {% endblock %}
 
