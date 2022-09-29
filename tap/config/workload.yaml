@@ -7,7 +7,6 @@ metadata:
     app.kubernetes.io/part-of: surferslookout
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/language: python
-    apis.apps.tanzu.vmware.com/register-api: "true"
 spec:
   params:
   - name: clusterBuilder
