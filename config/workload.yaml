@@ -9,6 +9,8 @@ metadata:
     apps.tanzu.vmware.com/language: python
 spec:
   params:
+  - name: alternateRevision
+    value: surfersaccelerator-00001
   - name: clusterBuilder
     value: full
   - name: annotations

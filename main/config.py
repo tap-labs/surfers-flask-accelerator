@@ -5,6 +5,7 @@ basedir = os.getcwd()
 
 class Config:
     VERSION = '2'
+    COLOR = os.environ.get('COLOR') or 'blue'
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'secret'
     SESSION_COOKIE_HTTPONLY = False
     ENV = 'unset'
