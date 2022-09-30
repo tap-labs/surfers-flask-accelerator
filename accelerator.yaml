@@ -5,3 +5,43 @@ accelerator:
   tags:
   - surferslookout
   - python
+
+engine:
+  merge:
+  - include: [ "**/*" ]
+    exclude: [ "config/*.yaml", "Tiltfile", "README.md", "catalog/*.yaml" ]
+  - include: [ "Tiltfile" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: surfersaccelerator
+        with: "#artifactId.toLowerCase()"
+    - type: ReplaceText
+      substitutions:
+      - text: your-registry.io/project
+        with: "#repositoryPrefix"
+
+  - include: [ "config/*.yaml" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: ": surfersaccelerator"
+        with: "': ' + #artifactId.toLowerCase()"
+    - merge:
+      - type: InvokeFragment
+        reference: tap-workload
+      - include: [ "**" ]
+      onConflict: UseFirst
+
+  - include: [ "README.md" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: surfersaccelerator
+        with: "#artifactId"
+  - include: [ "catalog/*.yaml" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: surfersaccelerator
+        with: "#artifactId"

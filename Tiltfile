@@ -1,9 +1,9 @@
 APP_NAME = "surfersaccelerator"
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='your-registry.io/project/' + APP_NAME)
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='alpha')
 K8S_CONTEXT = os.getenv("K8S_CONTEXT", default=".")
-WORKLOAD_FILE = "tap/config/workload.yaml"
+WORKLOAD_FILE = "config/workload.yaml"
 
 k8s_custom_deploy(
     APP_NAME,
