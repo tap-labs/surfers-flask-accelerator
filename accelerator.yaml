@@ -5,6 +5,12 @@ accelerator:
   tags:
   - surferslookout
   - python
+  options:
+  - name: repositoryPrefix
+    inputType: text
+    label: Prefix for the container image repository
+    defaultValue: dev.local
+    required: true
 
 engine:
   merge:
