@@ -16,6 +16,7 @@ engine:
   merge:
   - include: [ "**/*" ]
     exclude: [ "config/*.yaml", "Tiltfile", "README.md", "catalog/*.yaml" ]
+
   - include: [ "Tiltfile" ]
     chain:
     - type: ReplaceText
@@ -33,11 +34,6 @@ engine:
       substitutions:
       - text: ": surfersaccelerator"
         with: "': ' + #artifactId.toLowerCase()"
-    - merge:
-      - type: InvokeFragment
-        reference: tap-workload
-      - include: [ "**" ]
-      onConflict: UseFirst
 
   - include: [ "README.md" ]
     chain:
