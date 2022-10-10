@@ -25,7 +25,7 @@ spec:
       autoscaling.knative.dev/target: "60"
   source:
     git:
-      url: https://github.com/davlloyd/surfers-accelerator
+      url: https://github.com/davlloyd/surfers-flask-accelerator
       ref:
         branch: main
   env:
