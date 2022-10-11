@@ -31,4 +31,4 @@ spec:
         branch: main
   env:
   - name: COLOR
-    value: green
+    value: blue

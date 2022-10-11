@@ -52,10 +52,10 @@ engine:
       - text: ": surfers-flask-accelerator"
         with: "': ' + #artifactId.toLowerCase()"
       - text: ": blue"
-        with: "#pageColor"
+        with: "': ' + #pageColor"
 
   - include: [ "config/*.yaml" ]
-    condition: "#bsGitRepository.length() > 0"
+    condition: "#bsGitRepository.length > 0"
     chain:
     - type: ReplaceText
       substitutions:
