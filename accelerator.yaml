@@ -51,9 +51,11 @@ engine:
         with: "': ' + #artifactId.toLowerCase()"
       - text: ": surfers-flask-accelerator"
         with: "': ' + #artifactId.toLowerCase()"
+      - text: ": blue"
+        with: "#pageColor"
 
   - include: [ "config/*.yaml" ]
-    condition: "#_createGitRepo == true"
+    condition: "#bsGitRepository.length() > 0"
     chain:
     - type: ReplaceText
       substitutions:
@@ -79,10 +81,3 @@ engine:
         with: "#artifactId"
       - text: surfers-flask-accelerator
         with: "#artifactId"
-
-  - include: [ "main/config.py" ]
-    chain:
-    - type: ReplaceText
-      substitutions:
-      - text: blue
-        with: "#pageColor"
