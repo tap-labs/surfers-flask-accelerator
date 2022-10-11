@@ -14,6 +14,10 @@ spec:
   #  value: surfersacc-00001
   - name: clusterBuilder
     value: full
+  - name: git_user_email
+    value: gitopsemailaddress
+  - name: git_user_name
+    value: gitopsaccountname
   - name: annotations
     value:
       autoscaling.knative.dev/min-scale: "1"
