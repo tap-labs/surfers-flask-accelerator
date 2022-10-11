@@ -61,7 +61,7 @@ engine:
     - type: ReplaceText
       substitutions:
       - text: "davlloyd/surfers-flask-accelerator"
-        with: "#bsGitRepository.substring(0,9) + '/' + #bsGitRepository.substring(11,19) + '/' + #bsGitRepository.substring(21)"
+        with: "#bsGitRepository.substring(0, #bsGitRepository.indexOf('?')) + '/' + #bsGitRepository.substring(#bsGitRepository.indexOf('owner='),#bsGitRepository.indexOf('&')) + '/' + #bsGitRepository.split('repo=').pop()"
 
   - include: [ "README.md" ]
     chain:
