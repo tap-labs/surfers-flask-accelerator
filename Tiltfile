@@ -1,7 +1,7 @@
-APP_NAME = "surfersaccelerator"
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='your-registry.io/project/' + APP_NAME)
+APP_NAME = "surfersflaskaccelerator"
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='dockerhub.io/project/supply-chain/' + APP_NAME + '-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
-NAMESPACE = os.getenv("NAMESPACE", default='alpha')
+NAMESPACE = os.getenv("NAMESPACE", default='default')
 K8S_CONTEXT = os.getenv("K8S_CONTEXT", default=".")
 WORKLOAD_FILE = "config/workload.yaml"
 

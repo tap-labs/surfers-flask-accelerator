@@ -1,16 +1,17 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: surfersacc
+  name: surfers-flask-accelerator
   labels:
-    apps.tanzu.vmware.com/workload-type: bluegreen
+    apps.tanzu.vmware.com/workload-type: web
+    #apps.tanzu.vmware.com/workload-type: bluegreen
     app.kubernetes.io/part-of: surferslookout
     apps.tanzu.vmware.com/has-tests: "true"
     apps.tanzu.vmware.com/language: python
 spec:
   params:
-  - name: alternateRevision
-    value: surfersacc-00001
+  #- name: alternateRevision
+  #  value: surfersacc-00001
   - name: clusterBuilder
     value: full
   - name: annotations

@@ -9,7 +9,7 @@ accelerator:
   - name: repositoryPrefix
     inputType: text
     label: Prefix for the container image repository
-    defaultValue: dev.local
+    defaultValue: docker.io/<yourname>
     required: true
 
 engine:
@@ -21,29 +21,35 @@ engine:
     chain:
     - type: ReplaceText
       substitutions:
-      - text: surfersaccelerator
+      - text: surfersflaskaccelerator
         with: "#artifactId.toLowerCase()"
     - type: ReplaceText
       substitutions:
-      - text: your-registry.io/project
+      - text: docker.io/project
         with: "#repositoryPrefix"
 
   - include: [ "config/*.yaml" ]
     chain:
     - type: ReplaceText
       substitutions:
-      - text: ": surfersaccelerator"
+      - text: ": surfersflaskaccelerator"
+        with: "': ' + #artifactId.toLowerCase()"
+      - text: ": surfers-flask-accelerator"
         with: "': ' + #artifactId.toLowerCase()"
 
   - include: [ "README.md" ]
     chain:
     - type: ReplaceText
       substitutions:
-      - text: surfersaccelerator
+      - text: surfersflaskaccelerator
+        with: "#artifactId"
+      - text: surfers-flask-accelerator
         with: "#artifactId"
   - include: [ "catalog/*.yaml" ]
     chain:
     - type: ReplaceText
       substitutions:
-      - text: surfersaccelerator
+      - text: surfersflaskaccelerator
+        with: "#artifactId"
+      - text: surfers-flask-accelerator
         with: "#artifactId"
