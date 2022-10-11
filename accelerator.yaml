@@ -56,7 +56,7 @@ engine:
         with: "': ' + #pageColor"
 
   - include: [ "config/*.yaml" ]
-    condition: "#bsGitRepository.length > 0"
+    condition: "#bsGitRepository !+ null"
     chain:
     - type: ReplaceText
       substitutions:
