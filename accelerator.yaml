@@ -66,8 +66,8 @@ engine:
         with: "': ' + #artifactId.toLowerCase()"
       - text: ": surfers-flask-accelerator"
         with: "': ' + #artifactId.toLowerCase()"
-      - text: ": blue"
-        with: "': ' + #pageColor"
+      - text: "value: blue"
+        with: "'value: ' + #pageColor"
 
   - include: [ "README.md" ]
     chain:
