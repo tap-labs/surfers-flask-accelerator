@@ -29,7 +29,7 @@ accelerator:
         value: red
 
   - name: gitopsEnabled
-    label: GitOps Deployment Model
+    label: 'GitOps Deployment Model'
     description: Deployment utilises Git as the configuration state store and approval process
     display: true
     dataType: boolean
@@ -41,7 +41,7 @@ accelerator:
       name: gitopsEnabled
   - name: gitopsEmail
     label: 'GitOps Email Address'
-    description: Email address tp be used for GitOps access
+    description: Email address to be used for GitOps access
     dependsOn:
       name: gitopsEnabled
     
