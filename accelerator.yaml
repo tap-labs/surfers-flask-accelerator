@@ -5,17 +5,32 @@ accelerator:
   tags:
   - surferslookout
   - python
+  - web
   options:
   - name: repositoryPrefix
     inputType: text
     label: Prefix for the container image repository
     defaultValue: docker.io/<yourname>
     required: true
+  - name: pageColor
+    label: Initial color displayed by the root web page
+    inputType: radio
+    display: true
+    defaultValue: blue
+    choices:
+      - text: Blue
+        value: blue
+      - text: Green
+        value: green
+      - text: Yellow
+        value: yellow
+      - text: Red
+        value: red
 
 engine:
   merge:
   - include: [ "**/*" ]
-    exclude: [ "config/*.yaml", "Tiltfile", "README.md", "catalog/*.yaml" ]
+    exclude: [ "config/*.yaml", "Tiltfile", "README.md", "catalog/*.yaml", main/config.py ]
 
   - include: [ "Tiltfile" ]
     chain:
@@ -36,15 +51,24 @@ engine:
         with: "': ' + #artifactId.toLowerCase()"
       - text: ": surfers-flask-accelerator"
         with: "': ' + #artifactId.toLowerCase()"
+    condition: "#_createGitRepo == true"
+      chain:
+      - type: ReplaceText
+        substitutions:
+        - text: "davlloyd/surfers-flask-accelerator"
+          with: "#bsGitRepository.owner + '/' + ##bsGitRepository.repo"
 
   - include: [ "README.md" ]
     chain:
     - type: ReplaceText
       substitutions:
+      - text: SurfersFlaskAccelerator
+        with: "#artifactId"
       - text: surfersflaskaccelerator
         with: "#artifactId"
       - text: surfers-flask-accelerator
         with: "#artifactId"
+
   - include: [ "catalog/*.yaml" ]
     chain:
     - type: ReplaceText
@@ -53,3 +77,10 @@ engine:
         with: "#artifactId"
       - text: surfers-flask-accelerator
         with: "#artifactId"
+
+  - include: [ "main/config.py" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: blue
+        with: "#pageColor"
