@@ -62,6 +62,12 @@ engine:
       substitutions:
       - text: "https://github.com/davlloyd/surfers-flask-accelerator"
         with: "'https://' + #bsGitRepository.substring(0, #bsGitRepository.indexOf('?')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('=')+1), #bsGitRepository.indexOf('&')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('repo=')+5))"
+      - text: ": surfersflaskaccelerator"
+        with: "': ' + #artifactId.toLowerCase()"
+      - text: ": surfers-flask-accelerator"
+        with: "': ' + #artifactId.toLowerCase()"
+      - text: ": blue"
+        with: "': ' + #pageColor"
 
   - include: [ "README.md" ]
     chain:
