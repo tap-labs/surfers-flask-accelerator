@@ -6,11 +6,12 @@ accelerator:
   - surferslookout
   - python
   - web
+  - tanzu
   options:
   - name: repositoryPrefix
     inputType: text
     label: Prefix for the container image repository
-    defaultValue: docker.io/<yourname>
+    defaultValue: docker.io/<project>
     required: true
   - name: pageColor
     label: Initial color displayed by the root web page
