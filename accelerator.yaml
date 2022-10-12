@@ -56,8 +56,6 @@ engine:
       substitutions:
       - text: surfersflaskaccelerator
         with: "#artifactId.toLowerCase()"
-    - type: ReplaceText
-      substitutions:
       - text: docker.io/project
         with: "#repositoryPrefix"
 
