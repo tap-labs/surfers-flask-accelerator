@@ -72,9 +72,9 @@ engine:
       condition: "#gitopsEnabled"
       substitutions:
       - text: "gitopsaccountname"
-        with: "': ' + #gitopsAccount.toLowerCase()"
+        with: "#gitopsAccount.toLowerCase()"
       - text: "gitopsemailaddress"
-        with: "': ' + #gitopsEmail.toLowerCase()"
+        with: "#gitopsEmail.toLowerCase()"
     - type: ReplaceText
       substitutions:
       - text: ": surfersflaskaccelerator"
