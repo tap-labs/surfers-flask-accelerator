@@ -62,28 +62,27 @@ engine:
         with: "#repositoryPrefix"
 
   - include: [ "config/*.yaml" ]
-    merge:
-      chain:
-      - type: ReplaceText
-        condition: "#bsGitRepository != null"
-        substitutions:
-        - text: "https://github.com/davlloyd/surfers-flask-accelerator"
-          with: "'https://' + #bsGitRepository.substring(0, #bsGitRepository.indexOf('?')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('=')+1), #bsGitRepository.indexOf('&')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('repo=')+5))"
-      - type: ReplaceText
-        condition: "#gitopsEnabled"
-        substitutions:
-        - text: "gitopsaccountname"
-          with: "': ' + #gitopsAccount.toLowerCase()"
-        - text: "gitopsemailaddress"
-          with: "': ' + #gitopsEmail.toLowerCase()"
-      - type: ReplaceText
-        substitutions:
-        - text: ": surfersflaskaccelerator"
-          with: "': ' + #artifactId.toLowerCase()"
-        - text: ": surfers-flask-accelerator"
-          with: "': ' + #artifactId.toLowerCase()"
-        - text: "value: blue"
-          with: "'value: ' + #pageColor"
+    chain:
+    - type: ReplaceText
+      condition: "#bsGitRepository != null"
+      substitutions:
+      - text: "https://github.com/davlloyd/surfers-flask-accelerator"
+        with: "'https://' + #bsGitRepository.substring(0, #bsGitRepository.indexOf('?')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('=')+1), #bsGitRepository.indexOf('&')) + '/' + #bsGitRepository.substring((#bsGitRepository.indexOf('repo=')+5))"
+    - type: ReplaceText
+      condition: "#gitopsEnabled"
+      substitutions:
+      - text: "gitopsaccountname"
+        with: "': ' + #gitopsAccount.toLowerCase()"
+      - text: "gitopsemailaddress"
+        with: "': ' + #gitopsEmail.toLowerCase()"
+    - type: ReplaceText
+      substitutions:
+      - text: ": surfersflaskaccelerator"
+        with: "': ' + #artifactId.toLowerCase()"
+      - text: ": surfers-flask-accelerator"
+        with: "': ' + #artifactId.toLowerCase()"
+      - text: "value: blue"
+        with: "'value: ' + #pageColor"
 
   - include: [ "README.md" ]
     chain:
