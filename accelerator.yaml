@@ -27,7 +27,6 @@ accelerator:
         value: yellow
       - text: Red
         value: red
-
   - name: gitopsEnabled
     label: 'GitOps Deployment Model'
     description: Deployment utilises Git as the configuration state store and approval process
