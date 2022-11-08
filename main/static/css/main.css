@@ -38,3 +38,19 @@ label {
     text-transform:capitalize;
     color: rgb(14, 115, 9);
 }
+
+
+.subtext {
+    font-family: cursive, sans-serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-style: italic;
+    color: rgba(2, 2, 23, 0.565);
+}
+
+.container-footer{
+    grid-area: footer;
+    align-content: center;
+    color: white;
+  }
+  

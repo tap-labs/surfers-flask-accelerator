@@ -15,3 +15,14 @@ class DataManager():
             os.remove(_localfile)
         db.create_all()
         db.session.commit()
+
+
+    @staticmethod
+    def testdb():
+        app.logger.info('Test DB Connection')
+        try:
+            db.session.execute('SELECT 1')
+            return True
+        except Exception as e:
+            app.logger.error(f'Database connection attempt failed: {str(e)}')
+            return False

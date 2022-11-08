@@ -8,5 +8,8 @@
     <div class="container-center">
         <label style="color:{{ color_code(color) }};">Hello {{ color }} World</label>
     </div>
+    <div class="container-footer">
+        <label class="sub-text">database: {{config.SQLALCHEMY_DATABASE_URI}}</label>
+    </div>
 {% endblock %}
 
