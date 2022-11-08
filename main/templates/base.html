@@ -6,13 +6,15 @@
       <meta charset="utf-8">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+      <!-- Page Layout stylesheet -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/pagelayout.css') }}?ver={{config.VERSION}}">
       <!-- Main stylesheet -->
       <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}?ver={{config.VERSION}}">
     </head>
 
     <body>
 
-      <section>
+      <section class="container-primary">
         
         {% block content %}{% endblock %}
 

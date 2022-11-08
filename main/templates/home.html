@@ -3,13 +3,18 @@
 
 {% block content %}
 
-    <div class="container" style="background-color:{{ color_code(color) }};">
+    <div class="container-title">
+        <div class="center">
+            <label style="color:{{ color_code(color) }};">Hello {{ color }} World</label>
+        </div>
     </div>
-    <div class="container-center">
-        <label style="color:{{ color_code(color) }};">Hello {{ color }} World</label>
+    <div class="container-middle">
+        <div class="container-round" style="background-color:{{ color_code(color) }};"></div>
     </div>
     <div class="container-footer">
-        <label class="sub-text">database: {{config.SQLALCHEMY_DATABASE_URI}}</label>
+        <div class="center">
+            <label>database: {{config.SQLALCHEMY_DATABASE_URI}}</label>
+        </div>
     </div>
 {% endblock %}
 
