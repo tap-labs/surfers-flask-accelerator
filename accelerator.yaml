@@ -37,16 +37,16 @@ accelerator:
     label: 'GitOps Account Name'
     description: Account name for repository access for GitOps
     required: false
-    defaultValue: ""
     dependsOn:
       name: gitopsEnabled
+    defaultValue: git-user
   - name: gitopsEmail
     label: 'GitOps Email Address'
     description: Email address to be used for GitOps access
     required: false
-    defaultValue: ""
     dependsOn:
       name: gitopsEnabled
+    defaultValue: git-user@email
     
 engine:
   merge:
