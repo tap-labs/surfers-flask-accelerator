@@ -1,7 +1,5 @@
 flask
 pyservicebinding
 flask_sqlalchemy
-pymysql
-pysqlite3
 python-dotenv
 pytest
