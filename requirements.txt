@@ -1,5 +1,6 @@
-flask
-pyservicebinding
+Flask
 flask_sqlalchemy
+mysqldbmodel
 python-dotenv
+pyservicebinding
 pytest
