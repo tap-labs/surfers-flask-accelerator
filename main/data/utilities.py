@@ -1,5 +1,6 @@
 import json
 import os
+from sqlalchemy.sql import text
 from flask import current_app as app
 from main.data.models import db
 
@@ -21,7 +22,7 @@ class DataManager():
     def testdb():
         app.logger.info('Test DB Connection')
         try:
-            db.session.execute('SELECT 1')
+            db.session.execute(text('SELECT foo'))
             return True
         except Exception as e:
             app.logger.error(f'Database connection attempt failed: {str(e)}')
