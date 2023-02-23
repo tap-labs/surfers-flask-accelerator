@@ -37,7 +37,7 @@ class Dummy(db.Model):
 
         if self.id is None:
             _resp = Dummy.query.with_entities(Dummy.id).filter(Dummy.name == self.name).first()
-            _id = _resp["id"]
+            _id = _resp.id
         else:
             _id = self.id
 
