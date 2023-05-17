@@ -59,6 +59,10 @@ engine:
       substitutions:
       - text: SurfersFlaskAccelerator
         with: "#artifactId"
+      - text: surfersflaskaccelerator
+        with: "#artifactId"
+      - text: surfers-flask-accelerator
+        with: "#artifactId"
 
   - include: [ "Tiltfile" ]
     chain:
