@@ -51,7 +51,14 @@ accelerator:
 engine:
   merge:
   - include: [ "**/*" ]
-    exclude: [ "config/*.yaml", "Tiltfile", "README.md", "catalog/*.yaml" ]
+    exclude: [ "config/*.yaml", "Tiltfile", "README.md", "catalog/*.yaml", "docs/*.md" ]
+
+  - include: [  "docs/*.md" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: SurfersFlaskAccelerator
+        with: "#artifactId"
 
   - include: [ "Tiltfile" ]
     chain:
