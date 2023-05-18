@@ -97,6 +97,14 @@ engine:
     - type: ReplaceText
       condition: "#gitopsEnabled"
       substitutions:
+      - text: "#  - name: git_user_email"
+        with: "  - name: git_user_email"
+      - text: "#    value: gitopsemailaddress"
+        with: "    value: gitopsemailaddress"
+      - text: "#  - name: git_user_name"
+        with: "  - name: git_user_name"
+      - text: "#    value: gitopsaccountname"
+        with: "    value: gitopsaccountname"
       - text: "gitopsaccountname"
         with: "#gitopsAccount.toLowerCase()"
       - text: "gitopsemailaddress"
