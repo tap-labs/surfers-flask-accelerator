@@ -72,7 +72,7 @@ engine:
         with: "#artifactId"
       - text: surfersflaskaccelerator
         with: "#artifactId.toLowerCase()"
-      - text: docker.io/project
+      - text: "docker.io/project"
         with: "#repositoryPrefix"
 
 

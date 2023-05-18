@@ -1,5 +1,5 @@
 APP_NAME = "surfersflaskaccelerator"
-SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='dockerhub.io/project/supply-chain/' + APP_NAME + '-source')
+SOURCE_IMAGE = os.getenv("SOURCE_IMAGE", default='docker.io/project/supply-chain/' + APP_NAME + '-source')
 LOCAL_PATH = os.getenv("LOCAL_PATH", default='.')
 NAMESPACE = os.getenv("NAMESPACE", default='default')
 K8S_CONTEXT = os.getenv("K8S_CONTEXT", default="tap-aus-1")
