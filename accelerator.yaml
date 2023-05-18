@@ -101,7 +101,6 @@ engine:
         with: "#gitopsAccount.toLowerCase()"
       - text: "gitopsemailaddress"
         with: "#gitopsEmail.toLowerCase()"
-
     - type: ReplaceText
       substitutions:
       - text: ": surfersflaskaccelerator"
