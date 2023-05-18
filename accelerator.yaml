@@ -51,7 +51,7 @@ accelerator:
 engine:
   merge:
   - include: [ "**/*" ]
-    exclude: [ "config/*.yaml", "Tiltfile", "README.md", "catalog/*.yaml", "docs/*.md" ]
+    exclude: [ "config/*.yaml", "Tiltfile", "README.md", "catalog/*.yaml", "docs/*.md", ".vscode/*.json" ]
 
   - include: [  "docs/*.md" ]
     chain:
@@ -64,13 +64,25 @@ engine:
       - text: surfers-flask-accelerator
         with: "#artifactId"
 
+  - include: [ ".vscode/*.json" ]
+    chain:
+    - type: ReplaceText
+      substitutions:
+      - text: "Flask Accelerator"
+        with: "#artifactId"
+      - text: surfersflaskaccelerator
+        with: "#artifactId.toLowerCase()"
+      - text: docker.io/project
+        with: "#repositoryPrefix"
+
+
   - include: [ "Tiltfile" ]
     chain:
     - type: ReplaceText
       substitutions:
       - text: surfersflaskaccelerator
         with: "#artifactId.toLowerCase()"
-      - text: docker.io/project
+      - text: "docker.io/project"
         with: "#repositoryPrefix"
 
   - include: [ "config/*.yaml" ]

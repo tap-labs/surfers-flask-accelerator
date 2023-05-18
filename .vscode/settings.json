@@ -1,1 +1,5 @@
-{}
+{
+    "java.server.launchMode": "Standard",
+    "tanzu.enableLiveHover": true,
+    "tanzu.sourceImage": "dockerhub.io/project/supply-chain/surfersflaskaccelerator-source"
+}
