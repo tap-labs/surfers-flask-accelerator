@@ -14,10 +14,10 @@ spec:
   #  value: surfers-flask-accelerator-00001
   - name: clusterBuilder
     value: full-jammy
-#  - name: git_user_email
-#    value: gitopsemailaddress
-#  - name: git_user_name
-#    value: gitopsaccountname
+  - name: git_user_email
+    value: gitopsemailaddress
+  - name: git_user_name
+    value: gitopsaccountname
   - name: annotations
     value:
       autoscaling.knative.dev/min-scale: "1"
