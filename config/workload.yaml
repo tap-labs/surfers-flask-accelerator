@@ -30,7 +30,7 @@ spec:
       autoscaling.knative.dev/target: "60"
   source:
     git:
-      url: https://github.com/davlloyd/surfers-flask-accelerator
+      url: https://github.com/tap-labs/surfers-flask-accelerator
       ref:
         branch: main
   #serviceClaims:
